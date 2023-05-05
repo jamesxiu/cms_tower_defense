@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddtpae1rwvu0h"]
+
+[ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="1_dnram"]
+[ext_resource type="Script" path="res://Scenes/Towers/tower_1.gd" id="1_wjb0y"]
+
+[node name="Tower1" type="Node2D"]
+script = ExtResource("1_wjb0y")
+
+[node name="Tower" type="Sprite2D" parent="."]
+texture = ExtResource("1_dnram")
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+position = Vector2(0, 30)
