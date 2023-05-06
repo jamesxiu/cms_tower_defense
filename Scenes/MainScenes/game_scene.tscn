@@ -57,6 +57,27 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_uc6at")
 
+[node name="tower_2" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_y3lw5")
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="UI/HUD/BuildBox/tower_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_uc6at")
+flip_v = true
+
 [node name="GameControls" type="HBoxContainer" parent="UI/HUD"]
 layout_mode = 1
 anchors_preset = -1

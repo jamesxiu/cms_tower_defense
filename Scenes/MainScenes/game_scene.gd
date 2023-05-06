@@ -44,10 +44,12 @@ func _process(delta):
 		update_tower_preview()
 	if !between_waves and enemies_in_wave == 0:
 		if current_wave == num_waves:
-			#Win screen
+			#TODO: WIN SCREEN
+			print("You win")
 			emit_signal("game_result", true)
 			queue_free()
 		between_waves = true
+		money += 100
 		pause_play_button.button_pressed = false
 	
 func _unhandled_input(event):
@@ -59,7 +61,7 @@ func _unhandled_input(event):
 
 #WAVE FUNCS
 func start_next_wave():
-	print("starting wave %d", current_wave)
+	print("starting wave", current_wave)
 	var wave_data = retrieve_wave_data(current_wave)
 	between_waves = false
 	current_wave +=1
@@ -70,12 +72,14 @@ func retrieve_wave_data(current_wave):
 	#[enemy_name, timeout]
 	var wave_data = waves_data[current_wave]
 	enemies_in_wave = wave_data.size()
+	print("enemies_in_wave", enemies_in_wave)
 	return wave_data
 
 func spawn_enemies(wave_data):
 	for enemy in wave_data:
 		var new_enemy = load("res://Scenes/Enemies/" + enemy[0] + ".tscn").instantiate()
-		new_enemy.init(enemy[2])
+		new_enemy.health = enemy[2]
+		new_enemy.type = enemy[0]
 		new_enemy.connect("base_damage", on_base_damage)
 		new_enemy.connect("enemy_death", on_enemy_death)
 		map_node.get_node("Path").add_child(new_enemy, true)

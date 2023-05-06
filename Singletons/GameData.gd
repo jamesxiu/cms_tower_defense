@@ -2,17 +2,25 @@ extends Node
 
 var tower_data = {
 	"tower_1": {
-		"range": 350,
+		"range": 200,
 		"rate": 0.5,
 		"damage": 1,
 		"cost": 50
+	},
+	"tower_2": {
+		"range": 300,
+		"rate": 1,
+		"damage": 2,
+		"cost": 100
 	}
 }
 
 var enemy_data = {
 	"enemy_1": {
 		'speed': 150,
-		'health': 3
+	},
+	"enemy_2": {
+		'speed': 150,
 	}
 }
 
@@ -21,8 +29,8 @@ var level_data = {
 		'starting_hp': 20,
 		'wave_data': [
 			#name, timeout, health
-			[['enemy_1', 0.7, 3], ['enemy_1', 0.1, 3]],
-			[['enemy_1', 0.7, 5], ['enemy_1', 0.1, 5], ['enemy_1', 0,1, 5]]
+			[['enemy_1', 0.7, 3], ['enemy_2', 0.1, 3]],
+			[['enemy_1', 0.7, 5], ['enemy_2', 0.1, 5], ['enemy_1', 0.1, 5]]
 		]
 	}
 }
