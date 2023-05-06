@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddtpae1rwvu0h"]
+[gd_scene load_steps=4 format=3 uid="uid://ddtpae1rwvu0h"]
 
 [ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="1_dnram"]
 [ext_resource type="Script" path="res://Scenes/Towers/tower_1.gd" id="1_wjb0y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
+radius = 1.0
 
 [node name="Tower1" type="Node2D"]
 script = ExtResource("1_wjb0y")
@@ -10,4 +13,12 @@ script = ExtResource("1_wjb0y")
 texture = ExtResource("1_dnram")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]
-position = Vector2(0, 30)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_s06k4")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

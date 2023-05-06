@@ -7,8 +7,9 @@ func set_tower_preview(tower_type, mouse_position):
 	
 	var range_texture = Sprite2D.new()
 	var texture_pos = Vector2(0,0)
-	var scaling = GameData.tower_data[tower_type]['range']/600
+	var scaling = GameData.tower_data[tower_type]['range']/600.0
 	range_texture.texture = load("res://Assets/UI/range_overlay.png")
+	range_texture.scale = Vector2(scaling, scaling)
 	range_texture.modulate = Color("0fe908b4")
 	range_texture.set_name("RangeTexture")
 	
@@ -26,3 +27,11 @@ func update_tower_preview(new_position, color):
 		get_node("TowerPreview/RangeTexture").modulate = Color(color)
 		get_node("TowerPreview/DragTower").modulate = Color(color)
 		
+
+func _on_pause_play_pressed():
+	if get_tree().is_paused():
+		get_tree().paused=false
+	elif get_parent().between_waves:
+		get_parent().start_next_wave()
+	else:
+		get_tree().paused=true
