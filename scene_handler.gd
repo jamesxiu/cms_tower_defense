@@ -10,7 +10,7 @@ func _process(delta):
 	pass
 
 func on_new_game():
-	get_node("MainMenu/Margin/VBoxContainer/NewGame").queue_free()
+	# get_node("MainMenu/Margin/VBoxContainer/NewGame").queue_free()
 	var game_scene = load("res://Scenes/MainScenes/game_scene.tscn").instantiate()
 	add_child(game_scene)
 	
