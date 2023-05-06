@@ -1,6 +1,7 @@
 extends Node
 
 var type
+var range
 var enemy_array = []
 var built = false
 var target
@@ -8,7 +9,7 @@ var ready_to_fire = true
 
 func _ready():
 	if built:
-		get_node("Range/CollisionShape2D").get_shape().radius = 0.5*GameData.tower_data['tower_1']['range']
+		get_node("Range/CollisionShape2D").get_shape().radius = range
 		
 func _physics_process(delta):
 	if enemy_array.size() > 0 and built:

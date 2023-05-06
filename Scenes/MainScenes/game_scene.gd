@@ -17,6 +17,10 @@ var health_label
 var money = 100
 var money_label
 var quit_button
+var pause_play_button
+
+var waves_data = GameData['level_data'][1]['wave_data']
+var num_waves = waves_data.size()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,12 +34,21 @@ func _ready():
 	
 	quit_button = get_node("UI/HUD/InfoBar/H/QuitButton")
 	quit_button.connect("pressed", on_quit_game)
+	
+	pause_play_button = get_node("UI/HUD/GameControls/PausePlay")
 	# start_next_wave()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if build_mode:
 		update_tower_preview()
+	if !between_waves and enemies_in_wave == 0:
+		if current_wave == num_waves:
+			#Win screen
+			emit_signal("game_result", true)
+			queue_free()
+		between_waves = true
+		pause_play_button.button_pressed = false
 	
 func _unhandled_input(event):
 	if event.is_action_released('ui_accept') and build_mode:
@@ -46,21 +59,23 @@ func _unhandled_input(event):
 
 #WAVE FUNCS
 func start_next_wave():
-	var wave_data = retrieve_wave_data()
+	print("starting wave %d", current_wave)
+	var wave_data = retrieve_wave_data(current_wave)
 	between_waves = false
 	current_wave +=1
 	await get_tree().create_timer(1).timeout
 	spawn_enemies(wave_data)
 	
-func retrieve_wave_data():
+func retrieve_wave_data(current_wave):
 	#[enemy_name, timeout]
-	var wave_data = [['enemy_1', 0.7], ['enemy_1', 0,1]]
+	var wave_data = waves_data[current_wave]
 	enemies_in_wave = wave_data.size()
 	return wave_data
 
 func spawn_enemies(wave_data):
 	for enemy in wave_data:
 		var new_enemy = load("res://Scenes/Enemies/" + enemy[0] + ".tscn").instantiate()
+		new_enemy.init(enemy[2])
 		new_enemy.connect("base_damage", on_base_damage)
 		new_enemy.connect("enemy_death", on_enemy_death)
 		map_node.get_node("Path").add_child(new_enemy, true)
@@ -68,7 +83,6 @@ func spawn_enemies(wave_data):
 
 #BUILDING FUNCS
 func initiate_build_node(tower_type):
-	print(tower_type)
 	if build_mode:
 		cancel_build_mode()
 	build_type = tower_type
@@ -106,20 +120,34 @@ func verify_and_build():
 		new_tower.position = build_location
 		new_tower.built = true
 		new_tower.type = build_type
+		new_tower.range = GameData['tower_data'][build_type]['range']
 		money -= GameData['tower_data'][build_type]['cost']
 		money_label.text = str(money)
 		map_node.get_node("Towers").add_child(new_tower, true)
 		map_node.get_node("TowerExclusion").set_cell(0, build_tile, 5)
 
+#HEALTH AND MONEY FUNCS
 func on_base_damage(damage):
 	base_health -= damage
 	health_label.text = str(base_health)
 	if base_health <= 0:
 		emit_signal("game_result", false)
+		queue_free()
+	enemies_in_wave -= 1
 		
 func on_enemy_death():
 	money += 10
 	money_label.text = str(money)
+	enemies_in_wave -= 1
 
+#UI FUNCS
 func on_quit_game():
 	queue_free()
+	
+func _on_pause_play_pressed():
+	if get_tree().is_paused():
+		get_tree().paused=false
+	elif between_waves:
+		start_next_wave()
+	else:
+		get_tree().paused=true

@@ -27,11 +27,4 @@ func update_tower_preview(new_position, color):
 		get_node("TowerPreview/RangeTexture").modulate = Color(color)
 		get_node("TowerPreview/DragTower").modulate = Color(color)
 		
-
-func _on_pause_play_pressed():
-	if get_tree().is_paused():
-		get_tree().paused=false
-	elif get_parent().between_waves:
-		get_parent().start_next_wave()
-	else:
-		get_tree().paused=true
+	

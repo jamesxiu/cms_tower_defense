@@ -1,10 +1,12 @@
 extends PathFollow2D
 
-var health = GameData.enemy_data['enemy_1']['health']
+var health
 signal base_damage(damage)
 signal enemy_death()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func init(starting_health):
+	health = starting_health
 
 func _physics_process(delta):
 	move(delta)

@@ -18,6 +18,11 @@ var enemy_data = {
 
 var level_data = {
 	1: {
-		'starting_hp': 20
+		'starting_hp': 20,
+		'wave_data': [
+			#name, timeout, health
+			[['enemy_1', 0.7, 3], ['enemy_1', 0.1, 3]],
+			[['enemy_1', 0.7, 5], ['enemy_1', 0.1, 5], ['enemy_1', 0,1, 5]]
+		]
 	}
 }
