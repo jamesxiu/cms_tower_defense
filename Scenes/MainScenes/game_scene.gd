@@ -50,6 +50,7 @@ func _process(delta):
 			queue_free()
 		between_waves = true
 		money += 100
+		money_label.text = str(money)
 		pause_play_button.button_pressed = false
 	
 func _unhandled_input(event):
