@@ -2,7 +2,7 @@ extends Node
 
 var type
 var range
-var enemy_array = []
+var enemy_array = [] #list of enemies within tower radius
 var built = false
 var target
 var ready_to_fire = true
@@ -19,7 +19,7 @@ func _physics_process(delta):
 	else:
 		target = null
 	
-func select_target():
+func select_target(): #chooses enemy that's furthest along the path
 	var enemy_progress_array = []
 	for enemy in enemy_array:
 		enemy_progress_array.append(enemy.get_progress())

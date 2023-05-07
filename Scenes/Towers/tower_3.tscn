@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d34po8rh06kbg"]
+[gd_scene load_steps=4 format=3 uid="uid://bafbm0nbb4x5"]
 
-[ext_resource type="Script" path="res://Scenes/Towers/tower_2.gd" id="1_to8sr"]
-[ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="2_db3m4"]
+[ext_resource type="Script" path="res://Scenes/Towers/tower_3.gd" id="1_hiql2"]
+[ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="2_67xxl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
 radius = 1.0
 
-[node name="Tower2" type="Node2D"]
-script = ExtResource("1_to8sr")
+[node name="Tower3" type="Node2D"]
+script = ExtResource("1_hiql2")
 
 [node name="Tower" type="Sprite2D" parent="."]
-texture = ExtResource("2_db3m4")
+texture = ExtResource("2_67xxl")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]
 

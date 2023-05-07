@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://lnbdnt263e17"]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Texture2D" uid="uid://cjxrdhagyekce" path="res://Assets/Environment/Tilesets/terrain_tiles.png" id="1_1bole"]
-[ext_resource type="PackedScene" uid="uid://b5dqly28tx48m" path="res://Scenes/Maps/tower_1.tscn" id="2_72uhu"]
+[ext_resource type="PackedScene" uid="uid://b5dqly28tx48m" path="res://Scenes/Maps/neutrophil.tscn" id="2_72uhu"]
 [ext_resource type="Texture2D" uid="uid://c5no5jkywdlgq" path="res://Assets/Environment/Tilesets/Obstructed.png" id="2_b5im7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j22bd"]
