@@ -16,7 +16,7 @@ var tower_data = {
 	"b_cell": {
 		"range": 300,
 		"rate": 1,
-		"damage": 2,
+		"damage": 5,
 		"cost": 100
 	}
 }

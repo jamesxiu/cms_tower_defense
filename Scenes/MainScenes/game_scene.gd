@@ -26,7 +26,6 @@ var num_waves = waves_data.size()
 func _ready():
 	map_node = get_node("Map1")
 	for b in get_tree().get_nodes_in_group("build_buttons"):
-		print(b.get_name())
 		b.connect("pressed", self.initiate_build_node.bind(b.get_name()))
 	health_label = get_node("UI/HUD/InfoBar/H/Health")
 	health_label.text = str(base_health)
@@ -123,6 +122,7 @@ func verify_and_build():
 		#Test for cash, deduct cash, update cash
 		var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
 		new_tower.position = build_location
+		
 		new_tower.built = true
 		new_tower.type = build_type
 		new_tower.range = GameData['tower_data'][build_type]['range']
