@@ -18,6 +18,12 @@ var tower_data = {
 		"rate": 1,
 		"damage": 5,
 		"cost": 100
+	},
+	"cytotoxic_t": {
+		"range": 200,
+		"rate": 1,
+		"damage": 10,
+		"cost": 100
 	}
 }
 
