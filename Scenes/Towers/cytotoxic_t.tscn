@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3bvagabeltu6"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/cytotoxic_t.gd" id="1_5gdvh"]
+[ext_resource type="Texture2D" uid="uid://crd34blwh8t7k" path="res://Assets/Towers/cytotoxic_t.png" id="2_dl5iq"]
+[ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_2r42p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
+radius = 1.0
+
+[node name="CytotoxicT" type="Node2D"]
+script = ExtResource("1_5gdvh")
+
+[node name="Tower" type="Sprite2D" parent="."]
+texture = ExtResource("2_dl5iq")
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_s06k4")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="SellButton" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 40)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -130.0
+offset_right = 200.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_2r42p")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/SellButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "ASDF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

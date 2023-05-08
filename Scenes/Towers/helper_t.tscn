@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d34po8rh06kbg"]
+[gd_scene load_steps=5 format=3 uid="uid://plwtr6j51ps"]
 
-[ext_resource type="Script" path="res://Scenes/Towers/tower_2.gd" id="1_to8sr"]
-[ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="2_db3m4"]
-[ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_kt5lx"]
+[ext_resource type="Script" path="res://Scenes/Towers/helper_t.gd" id="1_eqk1m"]
+[ext_resource type="Texture2D" uid="uid://b5radyeyacldl" path="res://Assets/Towers/helper_t.png" id="2_dax70"]
+[ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_wp3nh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
 radius = 1.0
 
-[node name="Tower2" type="Node2D"]
-script = ExtResource("1_to8sr")
+[node name="HelperT" type="Node2D"]
+script = ExtResource("1_eqk1m")
 
 [node name="Tower" type="Sprite2D" parent="."]
-texture = ExtResource("2_db3m4")
+texture = ExtResource("2_dax70")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]
 
@@ -26,7 +26,7 @@ layer = 10
 
 [node name="SellButton" type="TextureButton" parent="CanvasLayer"]
 custom_minimum_size = Vector2(200, 40)
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -37,7 +37,7 @@ offset_right = 200.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("3_kt5lx")
+texture_normal = ExtResource("3_wp3nh")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/SellButton"]

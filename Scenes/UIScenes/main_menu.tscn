@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/UIScenes/main_menu.gd" id="1_fded1"]
 [ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="1_hqspv"]
-[ext_resource type="Texture2D" uid="uid://camfh6wvc7b3l" path="res://Assets/UI/menu_background.png" id="2_hvo7e"]
+[ext_resource type="Texture2D" uid="uid://dmdujhdvjhh5y" path="res://Assets/UI/menu_background.png" id="2_hvo7e"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_hvo7e")
+expand_mode = 2
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1

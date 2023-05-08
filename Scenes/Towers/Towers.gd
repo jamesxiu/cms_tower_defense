@@ -19,10 +19,10 @@ func _ready():
 		sell_button.connect("pressed", sell_tower)
 		get_node("Range/CollisionShape2D").get_shape().radius = tower_range
 		var infobutton = Button.new()
-		#infobutton.modulate = Color("ffffff00")
+		infobutton.modulate = Color("ffffff00")
 		infobutton.connect("pressed", on_infobutton_pressed)
-		infobutton.position = self.position-Vector2(24,24)
-		infobutton.size = Vector2(48, 48)
+		infobutton.position = self.position-Vector2(30,30)
+		infobutton.size = Vector2(60, 60)
 		infobutton.set_name("InfoButton")
 		get_node("CanvasLayer").add_child(infobutton)
 

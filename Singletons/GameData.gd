@@ -1,18 +1,46 @@
 extends Node
 
 var tower_data = {
-	"tower_1": {
+	"mucus": {
+		'slowdown': [0, .15, .3, .4, .5],
+		'cost': [50, 200, 300, 400, 100000000]
+	},
+	"neutrophil": {
 		"range": 200,
 		"rate": 0.5,
 		"damage": 1,
 		"cost": 50
 	},
-	"tower_2": {
+	"macrophage": {
 		"range": 300,
 		"rate": 1,
 		"damage": 2,
 		"cost": 100
-	}
+	},
+	"dendritic": {
+		"range": 300,
+		"rate": 1,
+		"damage": 2,
+		"cost": 50
+	},
+	"b_cell": {
+		"range": 300,
+		"rate": 1,
+		"damage": 2,
+		"cost": 50
+	},
+	"helper_t": {
+		"range": 300,
+		"rate": 1,
+		"damage": 2,
+		"cost": 50
+	},
+	"cytotoxic_t": {
+		"range": 300,
+		"rate": 1,
+		"damage": 2,
+		"cost": 50
+	},
 }
 
 var enemy_data = {

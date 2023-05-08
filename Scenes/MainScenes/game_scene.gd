@@ -1,5 +1,6 @@
 extends Node2D
 
+signal mucus_upgraded(level)
 var level
 var map_node
 var build_mode = false
@@ -21,6 +22,9 @@ var pause_play_button
 
 var waves_data
 var num_waves
+
+var mucus_level = 0
+var mucus_cost = GameData['tower_data']['mucus']['cost'][0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -89,6 +93,7 @@ func spawn_enemies(wave_data):
 		var new_enemy = load("res://Scenes/Enemies/" + enemy[0] + ".tscn").instantiate()
 		new_enemy.health = enemy[2]
 		new_enemy.type = enemy[0]
+		new_enemy.speed_multiplier = 1 - GameData['tower_data']['mucus']['slowdown'][mucus_level]
 		new_enemy.connect("base_damage", on_base_damage)
 		new_enemy.connect("enemy_death", on_enemy_death)
 		map_node.get_node("Path").add_child(new_enemy, true)
@@ -99,8 +104,11 @@ func initiate_build_node(tower_type):
 	if build_mode:
 		cancel_build_mode()
 	build_type = tower_type
-	build_mode = true
-	get_node("UI").set_tower_preview(tower_type, get_global_mouse_position())
+	if tower_type == 'mucus':
+		upgrade_mucus()
+	else:
+		build_mode = true
+		get_node("UI").set_tower_preview(tower_type, get_global_mouse_position())
 	
 func update_tower_preview():
 	var mouse_position = get_global_mouse_position()
@@ -130,6 +138,7 @@ func verify_and_build():
 	if build_valid:
 		#Test for cash, deduct cash, update cash
 		var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
+		print(build_type)
 		new_tower.position = build_location
 		new_tower.built = true
 		new_tower.type = build_type
@@ -138,6 +147,15 @@ func verify_and_build():
 		money_label.text = str(money)
 		map_node.get_node("Towers").add_child(new_tower, true)
 		map_node.get_node("TowerExclusion").set_cell(0, build_tile, 5)
+
+func upgrade_mucus():
+	if money >= mucus_cost:
+		money -= mucus_cost
+		money_label.text = str(money)
+		mucus_level += 1
+		mucus_cost = GameData['tower_data']['mucus']['cost'][mucus_level]
+		emit_signal("mucus_upgraded", mucus_level)
+		
 
 #HEALTH AND MONEY FUNCS
 func on_base_damage(damage):
