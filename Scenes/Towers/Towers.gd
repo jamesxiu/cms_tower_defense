@@ -6,12 +6,35 @@ var enemy_array = []
 var built = false
 var target
 var ready_to_fire = true
+var info_mode = false
+var sell_button
+var game_scene
 
 func _ready():
+	sell_button = get_node("CanvasLayer/SellButton")
+	sell_button.hide()
 	if built:
+		game_scene = get_parent().get_parent().get_parent()
+		get_node("CanvasLayer/SellButton/Label").text = "Sell (" + str(GameData['tower_data'][type]['cost']/2) + " DP)"
+		sell_button.connect("pressed", sell_tower)
 		get_node("Range/CollisionShape2D").get_shape().radius = range
-		
+		var infobutton = Button.new()
+		#infobutton.modulate = Color("ffffff00")
+		infobutton.connect("pressed", on_infobutton_pressed)
+		infobutton.position = self.position-Vector2(24,24)
+		infobutton.size = Vector2(48, 48)
+		infobutton.set_name("InfoButton")
+		get_node("CanvasLayer").add_child(infobutton)
+
+
 func _physics_process(delta):
+	if built and info_mode:
+		if Input.is_action_just_pressed("LeftClick"):
+			if !sell_button.button_pressed:
+				info_mode=false
+				get_node("RangeTexture").queue_free()
+				sell_button.hide()
+		
 	if enemy_array.size() > 0 and built:
 		select_target()
 		if ready_to_fire:
@@ -42,4 +65,28 @@ func _on_range_body_exited(body):
 	if built:
 		enemy_array.erase(body.get_parent())
 		
+func on_infobutton_pressed():
+	var build_mode = game_scene.build_mode
+	if !info_mode and !build_mode:
+		info_mode = true
+		var range_texture = Sprite2D.new()
+		var scaling = range/300.0
+		range_texture.position = Vector2(0,0)
+		range_texture.texture = load("res://Assets/UI/range_overlay.png")
+		range_texture.scale = Vector2(scaling, scaling)
+		range_texture.set_name("RangeTexture")
+		add_child(range_texture)
+		print("infobutton pressed")
+		sell_button.show()
+		
+func sell_tower():
+	game_scene.money += GameData['tower_data'][type]['cost'] / 2
+	var money_label = game_scene.get_node("UI/HUD/InfoBar/H/DP")
+	money_label.text = str(game_scene.money)
+	queue_free()
+		
+		
+		
+
+
 

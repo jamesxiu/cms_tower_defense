@@ -1,6 +1,6 @@
 extends Node2D
 
-var level="Yourmom"
+var level
 var map_node
 var build_mode = false
 var build_valid = false
@@ -21,7 +21,6 @@ var pause_play_button
 
 var waves_data
 var num_waves
-var infobutton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,8 +48,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_instance_valid(infobutton):
-		print(infobutton.pressed)
 	if build_mode:
 		update_tower_preview()
 	if !between_waves and enemies_in_wave == 0:
@@ -68,6 +65,7 @@ func _unhandled_input(event):
 	if event.is_action_released('ui_accept') and build_mode:
 		verify_and_build()
 		cancel_build_mode()
+		
 	elif event.is_action_released('ui_cancel') and build_mode:
 		cancel_build_mode()
 
@@ -169,4 +167,5 @@ func _on_pause_play_pressed():
 		start_next_wave()
 	else:
 		get_tree().paused=true
-		
+
+

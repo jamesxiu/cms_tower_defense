@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5l7ee17mlwln"]
+[gd_scene load_steps=9 format=3 uid="uid://c5l7ee17mlwln"]
 
 [ext_resource type="Texture2D" uid="uid://j5ss8pa1ksy1" path="res://Assets/Environment/Tilesets/tiles.png" id="1_avj3c"]
 [ext_resource type="Texture2D" uid="uid://c5no5jkywdlgq" path="res://Assets/Environment/Tilesets/Obstructed.png" id="2_kwsse"]
-[ext_resource type="PackedScene" uid="uid://b5dqly28tx48m" path="res://Scenes/Maps/tower_1.tscn" id="3_yrum2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ub4kx"]
 texture = ExtResource("1_avj3c")
@@ -79,8 +78,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(196607, 131076, 0, 131072, 131076, 0, 131073, 131076, 0, 131074, 131076, 0, 131075, 131076, 0, 131076, 131076, 0, 524304, 131076, 0, 524305, 131076, 0, 524306, 131076, 0, 524307, 131076, 0, 524308, 131076, 0, 131077, 196612, 0, 196613, 65540, 0, 262149, 65540, 0, 327685, 65540, 0, 393221, 65540, 0, 458757, 65540, 0, 524293, 262148, 1, 524294, 131076, 0, 524295, 131076, 0, 524296, 131076, 0, 524298, 196612, 1, 524297, 131076, 0, 524303, 262148, 1, 458767, 65540, 0, 393231, 65540, 0, 327695, 65540, 0, 262159, 65540, 0, 196623, 65540, 0, 131087, 196612, 0, 458762, 65540, 0, 393226, 65540, 0, 327690, 65540, 0, 262154, 65540, 0, 196618, 65540, 0, 131082, 131076, 1, 131083, 131076, 0, 131084, 131076, 0, 131085, 131076, 0, 131086, 131076, 0)
 
 [node name="Towers" type="Node2D" parent="."]
-
-[node name="Tower1" parent="Towers" instance=ExtResource("3_yrum2")]
 
 [node name="Path" type="Path2D" parent="."]
 curve = SubResource("Curve2D_hpq6c")

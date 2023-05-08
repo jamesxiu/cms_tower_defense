@@ -159,4 +159,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 
+[node name="TowerButtons" type="Node" parent="UI/HUD"]
+
 [connection signal="pressed" from="UI/HUD/GameControls/PausePlay" to="." method="_on_pause_play_pressed"]
