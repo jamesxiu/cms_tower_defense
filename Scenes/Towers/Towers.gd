@@ -1,7 +1,7 @@
 extends Node
 
 var type
-var range
+var tower_range
 var enemy_array = []
 var built = false
 var target
@@ -17,7 +17,7 @@ func _ready():
 		game_scene = get_parent().get_parent().get_parent()
 		get_node("CanvasLayer/SellButton/Label").text = "Sell (" + str(GameData['tower_data'][type]['cost']/2) + " DP)"
 		sell_button.connect("pressed", sell_tower)
-		get_node("Range/CollisionShape2D").get_shape().radius = range
+		get_node("Range/CollisionShape2D").get_shape().radius = tower_range
 		var infobutton = Button.new()
 		#infobutton.modulate = Color("ffffff00")
 		infobutton.connect("pressed", on_infobutton_pressed)
@@ -70,7 +70,7 @@ func on_infobutton_pressed():
 	if !info_mode and !build_mode:
 		info_mode = true
 		var range_texture = Sprite2D.new()
-		var scaling = range/300.0
+		var scaling = tower_range/300.0
 		range_texture.position = Vector2(0,0)
 		range_texture.texture = load("res://Assets/UI/range_overlay.png")
 		range_texture.scale = Vector2(scaling, scaling)

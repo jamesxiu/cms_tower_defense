@@ -10,7 +10,6 @@ func _ready():
 func on_level(level):
 	# get_node("MainMenu/Margin/VBoxContainer/NewGame").queue_free()
 	var game_scene = load("res://Scenes/MainScenes/game_scene.tscn").instantiate()
-	print(game_scene.level)
 	game_scene.level = level
 	get_parent().add_child(game_scene)
 	queue_free()

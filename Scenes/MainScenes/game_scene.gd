@@ -24,7 +24,6 @@ var num_waves
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(level)
 	if level == 1 or level == 2:
 		map_node = load("res://Scenes/Maps/map_1.tscn").instantiate()
 	else:
@@ -134,7 +133,7 @@ func verify_and_build():
 		new_tower.position = build_location
 		new_tower.built = true
 		new_tower.type = build_type
-		new_tower.range = GameData['tower_data'][build_type]['range']
+		new_tower.tower_range = GameData['tower_data'][build_type]['range']
 		money -= GameData['tower_data'][build_type]['cost']
 		money_label.text = str(money)
 		map_node.get_node("Towers").add_child(new_tower, true)
