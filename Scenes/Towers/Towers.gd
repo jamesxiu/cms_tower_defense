@@ -41,3 +41,5 @@ func _on_range_body_entered(body):
 func _on_range_body_exited(body):
 	if built:
 		enemy_array.erase(body.get_parent())
+		
+

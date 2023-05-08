@@ -1,7 +1,6 @@
 extends Node2D
 
-var level = 1
-signal game_result(result)
+var level="Yourmom"
 var map_node
 var build_mode = false
 var build_valid = false
@@ -13,19 +12,27 @@ var current_wave = 0
 var between_waves = true
 var enemies_in_wave = 0
 
-var base_health = GameData['level_data'][level]['starting_hp']
+var base_health
 var health_label
 var money = 100
 var money_label
 var quit_button
 var pause_play_button
 
-var waves_data = GameData['level_data'][level]['wave_data']
-var num_waves = waves_data.size()
+var waves_data
+var num_waves
+var infobutton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	map_node = load("res://Scenes/Maps/map_" + str(level) + ".tscn").instantiate()
+	print(level)
+	if level == 1 or level == 2:
+		map_node = load("res://Scenes/Maps/map_1.tscn").instantiate()
+	else:
+		map_node = load("res://Scenes/Maps/map_2.tscn").instantiate()
+	base_health = GameData['level_data'][level]['starting_hp']
+	waves_data = GameData['level_data'][level]['wave_data']
+	num_waves = waves_data.size()
 	add_child(map_node)
 	for b in get_tree().get_nodes_in_group("build_buttons"):
 		b.connect("pressed", self.initiate_build_node.bind(b.get_name()))
@@ -42,14 +49,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if is_instance_valid(infobutton):
+		print(infobutton.pressed)
 	if build_mode:
 		update_tower_preview()
 	if !between_waves and enemies_in_wave == 0:
 		if current_wave == num_waves:
-			#TODO: WIN SCREEN
-			print("You win")
-			emit_signal("game_result", true)
+			var win_scene = load("res://Scenes/UIScenes/win_menu.tscn").instantiate()
+			get_parent().add_child(win_scene)
 			queue_free()
+			return
 		between_waves = true
 		money += 100
 		money_label.text = str(money)
@@ -102,7 +111,7 @@ func update_tower_preview():
 	var current_tile = path_node.local_to_map(mouse_position)
 	var tile_position = path_node.map_to_local(current_tile)
 	if money >= GameData['tower_data'][build_type]['cost'] and path_node.get_cell_source_id(0, current_tile) == -1:
-		for t in get_node("Map1/Towers").get_children():
+		for t in get_node(map_node.get_name()+"/Towers").get_children():
 			if t.position == tile_position:
 				get_node("UI").update_tower_preview(tile_position, "e9080878")
 				build_valid = false
@@ -138,8 +147,10 @@ func on_base_damage(damage):
 	base_health -= damage
 	health_label.text = str(base_health)
 	if base_health <= 0:
-		emit_signal("game_result", false)
+		var death_scene = load("res://Scenes/UIScenes/death_menu.tscn").instantiate()
+		get_parent().add_child(death_scene)
 		queue_free()
+		return
 	enemies_in_wave -= 1
 		
 func on_enemy_death():
@@ -158,3 +169,4 @@ func _on_pause_play_pressed():
 		start_next_wave()
 	else:
 		get_tree().paused=true
+		

@@ -2,8 +2,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("MainMenu/Margin/VBoxContainer/NewGame").connect("pressed", self.on_new_game)
-	get_node("MainMenu/Margin/VBoxContainer/QuitGame").connect("pressed", self.quit_game)
+	get_node("MainMenu/Margin/HBoxContainer/NewGame").connect("pressed", self.on_new_game)
+	get_node("MainMenu/Margin/HBoxContainer/QuitGame").connect("pressed", self.quit_game)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -11,8 +11,8 @@ func _process(delta):
 
 func on_new_game():
 	# get_node("MainMenu/Margin/VBoxContainer/NewGame").queue_free()
-	var game_scene = load("res://Scenes/MainScenes/game_scene.tscn").instantiate()
-	add_child(game_scene)
+	var level_scene = load("res://Scenes/UIScenes/level_menu.tscn").instantiate()
+	add_child(level_scene)
 	
 func quit_game():
 	get_tree().quit()

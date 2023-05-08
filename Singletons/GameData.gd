@@ -32,5 +32,20 @@ var level_data = {
 			[['enemy_1', 0.7, 3], ['enemy_2', 0.1, 3]],
 			[['enemy_1', 0.7, 5], ['enemy_2', 0.1, 5], ['enemy_1', 0.1, 5]]
 		]
+	},
+	2: {
+		'starting_hp': 30,
+		'wave_data': [
+			#name, timeout, health
+			[['enemy_1', 0.7, 3], ['enemy_2', 0.1, 3]],
+			[['enemy_1', 0.7, 5], ['enemy_2', 0.1, 5], ['enemy_1', 0.1, 5]]
+		]
+	},
+	3: {
+		'starting_hp': 40,
+		'wave_data': [
+			#name, timeout, health
+			[['enemy_1', 0.7, 1]],
+		]
 	}
 }
