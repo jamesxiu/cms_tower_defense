@@ -1,13 +1,19 @@
 extends Node
 
 var tower_data = {
-	"tower_1": {
+	"neutrophil": {
 		"range": 200,
 		"rate": 0.5,
 		"damage": 1,
 		"cost": 50
 	},
-	"tower_2": {
+	"macrophage": {
+		"range": 300,
+		"rate": 1,
+		"damage": 2,
+		"cost": 100
+	},
+	"b_cell": {
 		"range": 300,
 		"rate": 1,
 		"damage": 2,

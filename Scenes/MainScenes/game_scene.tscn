@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnaekn16k80fk"]
+[gd_scene load_steps=10 format=3 uid="uid://cnaekn16k80fk"]
 
-[ext_resource type="PackedScene" uid="uid://lnbdnt263e17" path="res://Scenes/Maps/map_1.tscn" id="1_iu8p5"]
+[ext_resource type="PackedScene" path="res://Scenes/Maps/map_1.tscn" id="1_iu8p5"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/game_scene.gd" id="1_nji3o"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/UI.gd" id="3_grvtu"]
 [ext_resource type="Texture2D" uid="uid://isf145e5vlfv" path="res://Assets/UI/blue_button12.png" id="3_y3lw5"]
-[ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="4_uc6at"]
+[ext_resource type="Texture2D" uid="uid://cmyi8p34r8c6v" path="res://Assets/Towers/neutrophil.png" id="5_pdsb0"]
 [ext_resource type="Texture2D" uid="uid://clxr56ssgtwu0" path="res://Assets/Icons/forward.png" id="6_73o4r"]
+[ext_resource type="Texture2D" uid="uid://deh7mx8pi8fy2" path="res://Assets/Towers/macrophage.png" id="6_vxl7o"]
 [ext_resource type="Texture2D" uid="uid://wtyxuxdbv0d5" path="res://Assets/Icons/pause.png" id="7_eav4v"]
+[ext_resource type="Texture2D" uid="uid://b66h066khpopt" path="res://Assets/Towers/bCell.png" id="7_i6dhr"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_nji3o")
@@ -37,14 +39,14 @@ grow_vertical = 0
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="tower_1" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
+[node name="neutrophil" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("3_y3lw5")
 stretch_mode = 0
 
-[node name="Icon" type="TextureRect" parent="UI/HUD/BuildBox/tower_1"]
+[node name="Icon" type="TextureRect" parent="UI/HUD/BuildBox/neutrophil"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -55,16 +57,16 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_uc6at")
+texture = ExtResource("5_pdsb0")
 
-[node name="tower_2" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
+[node name="macrophage" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("3_y3lw5")
 stretch_mode = 0
 
-[node name="Icon" type="TextureRect" parent="UI/HUD/BuildBox/tower_2"]
+[node name="Icon" type="TextureRect" parent="UI/HUD/BuildBox/macrophage"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -75,7 +77,28 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_uc6at")
+texture = ExtResource("6_vxl7o")
+flip_v = true
+
+[node name="b_cell" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_y3lw5")
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="UI/HUD/BuildBox/b_cell"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i6dhr")
 flip_v = true
 
 [node name="GameControls" type="HBoxContainer" parent="UI/HUD"]
