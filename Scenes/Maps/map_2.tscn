@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://lnbdnt263e17"]
+[gd_scene load_steps=10 format=3 uid="uid://c5l7ee17mlwln"]
 
-[ext_resource type="Texture2D" uid="uid://j5ss8pa1ksy1" path="res://Assets/Environment/Tilesets/tiles.png" id="1_pecsf"]
-[ext_resource type="PackedScene" uid="uid://b5dqly28tx48m" path="res://Scenes/Maps/tower_1.tscn" id="2_72uhu"]
-[ext_resource type="Texture2D" uid="uid://c5no5jkywdlgq" path="res://Assets/Environment/Tilesets/Obstructed.png" id="2_b5im7"]
+[ext_resource type="Texture2D" uid="uid://j5ss8pa1ksy1" path="res://Assets/Environment/Tilesets/tiles.png" id="1_avj3c"]
+[ext_resource type="Texture2D" uid="uid://c5no5jkywdlgq" path="res://Assets/Environment/Tilesets/Obstructed.png" id="2_kwsse"]
+[ext_resource type="PackedScene" uid="uid://b5dqly28tx48m" path="res://Scenes/Maps/tower_1.tscn" id="3_yrum2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ub4kx"]
-texture = ExtResource("1_pecsf")
+texture = ExtResource("1_avj3c")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -30,12 +30,12 @@ terrain_set_0/terrain_0/color = Color(0.286275, 0.431373, 0.223529, 1)
 sources/0 = SubResource("TileSetAtlasSource_ub4kx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r6of"]
-texture = ExtResource("2_b5im7")
+texture = ExtResource("2_kwsse")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dc1mv"]
-texture = ExtResource("1_pecsf")
+texture = ExtResource("1_avj3c")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -62,11 +62,11 @@ sources/4 = SubResource("TileSetAtlasSource_dc1mv")
 
 [sub_resource type="Curve2D" id="Curve2D_hpq6c"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -30, 161, 0, 0, 0, 0, 976, 161, 0, 0, 0, 0, 992, 177, 0, 0, 0, 0, 989, 340, 0, 0, 0, 0, 970, 352, 0, 0, 0, 0, 304, 351, 0, 0, 0, 0, 290, 365, 0, 0, 0, 0, 292, 531, 0, 0, 0, 0, 319, 547, 0, 0, 0, 0, 1315, 546)
+"points": PackedVector2Array(0, 0, 0, 0, -30, 161, 0, 0, 0, 0, 337, 160, 0, 0, 0, 0, 351, 173, 0, 0, 0, 0, 355, 530, 0, 0, 0, 0, 371, 544, 0, 0, 0, 0, 655, 545, 0, 0, 0, 0, 670, 534, 0, 0, 0, 0, 673, 175, 0, 0, 0, 0, 687, 163, 0, 0, 0, 0, 978, 161, 0, 0, 0, 0, 989, 173, 0, 0, 0, 0, 995, 527, 0, 0, 0, 0, 1018, 545, 0, 0, 0, 0, 1314, 543)
 }
-point_count = 10
+point_count = 14
 
-[node name="Map1" type="Node2D"]
+[node name="Map2" type="Node2D"]
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d0sd1")
@@ -76,11 +76,11 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607
 [node name="TowerExclusion" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_oflw2")
 format = 2
-layer_0/tile_data = PackedInt32Array(131072, 131076, 0, 131073, 131076, 0, 131074, 131076, 0, 131075, 131076, 0, 131076, 131076, 0, 131077, 131076, 0, 131078, 131076, 0, 131079, 131076, 0, 131080, 131076, 0, 131081, 131076, 0, 131082, 131076, 0, 327690, 131076, 0, 524298, 131076, 0, 196607, 131076, 0, 131083, 131076, 0, 131084, 131076, 0, 131085, 131076, 0, 131086, 131076, 0, 131087, 196612, 0, 196623, 65540, 0, 262159, 65540, 0, 327695, 196612, 1, 327694, 131076, 0, 327693, 131076, 0, 327692, 131076, 0, 327691, 131076, 0, 327689, 131076, 0, 327688, 131076, 0, 327687, 131076, 0, 327686, 131076, 0, 327685, 131076, 0, 327684, 131076, 1, 524292, 262148, 1, 393220, 65540, 0, 458756, 65540, 0, 524293, 131076, 0, 524294, 131076, 0, 524295, 131076, 0, 524296, 131076, 0, 524297, 131076, 0, 524299, 131076, 0, 524300, 131076, 0, 524301, 131076, 0, 524302, 131076, 0, 524303, 131076, 0, 524304, 131076, 0, 524305, 131076, 0, 524306, 131076, 0, 524307, 131076, 0, 524308, 131076, 0)
+layer_0/tile_data = PackedInt32Array(196607, 131076, 0, 131072, 131076, 0, 131073, 131076, 0, 131074, 131076, 0, 131075, 131076, 0, 131076, 131076, 0, 524304, 131076, 0, 524305, 131076, 0, 524306, 131076, 0, 524307, 131076, 0, 524308, 131076, 0, 131077, 196612, 0, 196613, 65540, 0, 262149, 65540, 0, 327685, 65540, 0, 393221, 65540, 0, 458757, 65540, 0, 524293, 262148, 1, 524294, 131076, 0, 524295, 131076, 0, 524296, 131076, 0, 524298, 196612, 1, 524297, 131076, 0, 524303, 262148, 1, 458767, 65540, 0, 393231, 65540, 0, 327695, 65540, 0, 262159, 65540, 0, 196623, 65540, 0, 131087, 196612, 0, 458762, 65540, 0, 393226, 65540, 0, 327690, 65540, 0, 262154, 65540, 0, 196618, 65540, 0, 131082, 131076, 1, 131083, 131076, 0, 131084, 131076, 0, 131085, 131076, 0, 131086, 131076, 0)
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Tower1" parent="Towers" instance=ExtResource("2_72uhu")]
+[node name="Tower1" parent="Towers" instance=ExtResource("3_yrum2")]
 
 [node name="Path" type="Path2D" parent="."]
 curve = SubResource("Curve2D_hpq6c")

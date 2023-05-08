@@ -1,5 +1,6 @@
 extends Node2D
 
+var level = 1
 signal game_result(result)
 var map_node
 var build_mode = false
@@ -12,19 +13,20 @@ var current_wave = 0
 var between_waves = true
 var enemies_in_wave = 0
 
-var base_health = GameData['level_data'][1]['starting_hp']
+var base_health = GameData['level_data'][level]['starting_hp']
 var health_label
 var money = 100
 var money_label
 var quit_button
 var pause_play_button
 
-var waves_data = GameData['level_data'][1]['wave_data']
+var waves_data = GameData['level_data'][level]['wave_data']
 var num_waves = waves_data.size()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	map_node = get_node("Map1")
+	map_node = load("res://Scenes/Maps/map_" + str(level) + ".tscn").instantiate()
+	add_child(map_node)
 	for b in get_tree().get_nodes_in_group("build_buttons"):
 		b.connect("pressed", self.initiate_build_node.bind(b.get_name()))
 	health_label = get_node("UI/HUD/InfoBar/H/Health")

@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnaekn16k80fk"]
+[gd_scene load_steps=7 format=3 uid="uid://cnaekn16k80fk"]
 
-[ext_resource type="PackedScene" uid="uid://lnbdnt263e17" path="res://Scenes/Maps/map_1.tscn" id="1_iu8p5"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/game_scene.gd" id="1_nji3o"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/UI.gd" id="3_grvtu"]
 [ext_resource type="Texture2D" uid="uid://isf145e5vlfv" path="res://Assets/UI/blue_button12.png" id="3_y3lw5"]
@@ -10,8 +9,6 @@
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_nji3o")
-
-[node name="Map1" parent="." instance=ExtResource("1_iu8p5")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_grvtu")
