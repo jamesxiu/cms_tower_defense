@@ -6,7 +6,7 @@ var tower_data = {
 		'cost': [100, 200, 300, 400, 100000000]
 	},
 	"neutrophil": {
-		"range": 250,
+		"range": 200,
 		"rate": 0.7,
 		"damage": 1,
 		"cost": 60
@@ -81,7 +81,7 @@ var level_data = {
 		'starting_hp': 30,
 		'wave_data': [
 			#name, timeout, health
-			[['enemy_1', 0.7, 3], ['enemy_2', 0.1, 3]],
+			[['enemy_5', 0.7, 3], ['enemy_4', 0.1, 3]],
 			[['enemy_1', 0.7, 5], ['enemy_2', 0.1, 5], ['enemy_1', 0.1, 5]]
 		]
 	},
