@@ -8,10 +8,10 @@
 radius = 1.0
 
 [node name="Neutrophil" type="Node2D"]
-scale = Vector2(0.22, 0.22)
 script = ExtResource("1_wjb0y")
 
 [node name="Tower" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_o5ad1")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]

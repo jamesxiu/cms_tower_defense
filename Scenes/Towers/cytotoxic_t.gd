@@ -48,6 +48,7 @@ func fire():
 	print("firing", target)
 	ready_to_fire = false
 	target.on_hit(GameData.tower_data[type]['damage'])
+	add_projectile()
 	await get_tree().create_timer(GameData.tower_data[type]['rate']).timeout
 	print("reloaded")
 	ready_to_fire = true

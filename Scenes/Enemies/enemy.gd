@@ -9,6 +9,7 @@ var speed_multiplier = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
+	rotates = false
 	get_parent().get_parent().get_parent().connect("mucus_upgraded", on_mucus_upgrade)
 	health_label = get_node("CharacterBody2D/Health")
 	health_label.text = str(health)

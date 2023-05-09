@@ -30,7 +30,6 @@ func _ready():
 func _physics_process(delta):
 	if built and info_mode:
 		if Input.is_action_just_pressed("LeftClick"):
-			print("CLICK OFF OF INFO")
 			if !sell_button.button_pressed:
 				info_mode=false
 				get_node("RangeTexture").queue_free()
@@ -54,6 +53,7 @@ func fire():
 	print("firing", target)
 	ready_to_fire = false
 	target.on_hit(GameData.tower_data[type]['damage'])
+	add_projectile()
 	await get_tree().create_timer(GameData.tower_data[type]['rate']).timeout
 	print("reloaded")
 	ready_to_fire = true
@@ -77,7 +77,6 @@ func on_infobutton_pressed():
 		range_texture.scale = Vector2(scaling, scaling)
 		range_texture.set_name("RangeTexture")
 		add_child(range_texture)
-		print("infobutton pressed")
 		sell_button.show()
 		
 func sell_tower():
@@ -96,8 +95,19 @@ func add_specialty(specialty_type):
 	
 func clear_specialty_sprite():
 	get_node("SpecialtySprite").queue_free()
-	
 		
+		
+func add_projectile():
+	var projectile = load("res://Scenes/Towers/projectile.tscn").instantiate()
+	projectile.target = target
+	if type == 'macrophage' or type == 'cytotoxic_t' or type == 'neutrophil':
+		projectile.texture = get_node("Tower").texture
+		projectile.scale = Vector2(.05, .05)
+	else:
+		projectile.texture = load("res://Assets/Towers/antibody.png")
+		projectile.scale = Vector2(.4, .4)
+	projectile.position = self.position
+	game_scene.add_child(projectile)
 
 
 

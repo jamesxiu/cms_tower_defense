@@ -90,9 +90,9 @@ func start_next_wave():
 	await get_tree().create_timer(1).timeout
 	spawn_enemies(wave_data)
 	
-func retrieve_wave_data(current_wave):
+func retrieve_wave_data(cur_wave):
 	#[enemy_name, timeout]
-	var wave_data = waves_data[current_wave]
+	var wave_data = waves_data[cur_wave]
 	enemies_in_wave = wave_data.size()
 	print("enemies_in_wave", enemies_in_wave)
 	return wave_data

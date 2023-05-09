@@ -6,7 +6,6 @@ func set_tower_preview(tower_type, mouse_position):
 	drag_tower.modulate = Color("0fe908b4")
 	
 	var range_texture = Sprite2D.new()
-	var texture_pos = Vector2(0,0)
 	var scaling = GameData.tower_data[tower_type]['range']/300.0
 	range_texture.texture = load("res://Assets/UI/range_overlay.png")
 	range_texture.scale = Vector2(scaling, scaling)
