@@ -9,37 +9,37 @@ var tower_data = {
 		"range": 200,
 		"rate": 0.5,
 		"damage": 1,
-		"cost": 50
+		"cost": 1
 	},
 	"macrophage": {
 		"range": 300,
 		"rate": 1,
 		"damage": 2,
-		"cost": 100
+		"cost": 1
 	},
 	"dendritic": {
 		"range": 300,
-		"rate": 1,
-		"damage": 2,
-		"cost": 50
+		"rate": 100,
+		"damage": 0,
+		"cost": 1
 	},
 	"b_cell": {
 		"range": 300,
 		"rate": 1,
-		"damage": 2,
-		"cost": 50
+		"damage": 5,
+		"cost": 1
 	},
 	"helper_t": {
 		"range": 300,
-		"rate": 1,
-		"damage": 2,
-		"cost": 50
+		"rate": 100,
+		"damage": 0,
+		"cost": 1
 	},
 	"cytotoxic_t": {
-		"range": 300,
-		"rate": 1,
-		"damage": 2,
-		"cost": 50
+		"range": 150,
+		"rate": 2,
+		"damage": 15,
+		"cost": 1
 	},
 }
 

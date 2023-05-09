@@ -25,9 +25,8 @@ func on_mucus_upgrade(level):
 
 func on_hit(damage):
 	health -= damage
-	print(health)
 	if health <= 0:
-		print("emitted death")
+		print("emitted death", self)
 		emit_signal("enemy_death")
 		on_destroy()
 

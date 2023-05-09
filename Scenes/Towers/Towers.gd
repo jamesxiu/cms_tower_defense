@@ -30,6 +30,7 @@ func _ready():
 func _physics_process(delta):
 	if built and info_mode:
 		if Input.is_action_just_pressed("LeftClick"):
+			print("CLICK OFF OF INFO")
 			if !sell_button.button_pressed:
 				info_mode=false
 				get_node("RangeTexture").queue_free()
@@ -85,8 +86,8 @@ func sell_tower():
 	money_label.text = str(game_scene.money)
 	queue_free()
 		
-		
-		
+
+
 
 
 
