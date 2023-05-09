@@ -164,6 +164,10 @@ func upgrade_mucus():
 		mucus_level += 1
 		mucus_cost = GameData['tower_data']['mucus']['cost'][mucus_level]
 		mucus_level_label.text = str(mucus_level)
+		if mucus_level < 4:
+			get_node("UI/HUD/BuildBox/mucus/Label").text = str(mucus_cost)
+		else:
+			get_node("UI/HUD/BuildBox/mucus/Label").text = 'max'
 		emit_signal("mucus_upgraded", mucus_level)
 		get_node("UI/HUD/BuildBox/mucus/Label").text = str(mucus_cost)
 		
