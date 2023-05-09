@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5fx2x2c0778o"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/neutrophil.gd" id="1_wjb0y"]
-[ext_resource type="Texture2D" uid="uid://bkxwgafvem1o7" path="res://Assets/Towers/neutrophil.png" id="2_o5ad1"]
+[ext_resource type="Texture2D" uid="uid://spmfpt1c2ytg" path="res://Assets/Towers/neutrophil.png" id="2_o5ad1"]
 [ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_tkhkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
 radius = 1.0
 
 [node name="Neutrophil" type="Node2D"]
+scale = Vector2(0.22, 0.22)
 script = ExtResource("1_wjb0y")
 
 [node name="Tower" type="Sprite2D" parent="."]

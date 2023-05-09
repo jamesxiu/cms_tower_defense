@@ -186,7 +186,10 @@ func on_enemy_death():
 #UI FUNCS
 func on_help_press():
 	#open help menu
-	pass
+	var help_menu = load("res://Scenes/SupportScenes/help_menu.tscn").instantiate()
+	get_parent().add_child(help_menu)
+	get_tree().paused=true
+	pause_play_button.hide()
 
 func on_quit_game():
 	queue_free()

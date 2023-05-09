@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://d34po8rh06kbg"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/macrophage.gd" id="1_l5h28"]
-[ext_resource type="Texture2D" uid="uid://w6ve1rtwwbf1" path="res://Assets/Towers/macrophage.png" id="2_nbhci"]
+[ext_resource type="Texture2D" uid="uid://8dxmqpicv5ml" path="res://Assets/Towers/macrophage.png" id="2_nbhci"]
 [ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_kt5lx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
 radius = 1.0
 
 [node name="Macrophage" type="Node2D"]
+scale = Vector2(0.22, 0.22)
 script = ExtResource("1_l5h28")
 
 [node name="Tower" type="Sprite2D" parent="."]

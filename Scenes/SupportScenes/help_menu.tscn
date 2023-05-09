@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6r2myvq2aw8"]
+
+[ext_resource type="Script" path="res://Scenes/SupportScenes/help_menu.gd" id="1_gbjpa"]
+[ext_resource type="Texture2D" uid="uid://bmcyvetlrjpfn" path="res://Assets/UI/blank_background.png" id="2_ckiro"]
+[ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_ahmg4"]
+
+[node name="HelpMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+script = ExtResource("1_gbjpa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 10
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -107.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ckiro")
+expand_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+offset_left = 150.0
+offset_top = 149.0
+offset_right = 1130.0
+offset_bottom = 507.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0.247059, 1)
+theme_override_font_sizes/font_size = 20
+text = "Welcome to Immunology Tower Defense! In this game you will protect yourself from infection from harmful pathogens. There are three levels to the game. Your goal in each level is to survive.
+
+-In each level, there will be several waves of pathogens entering the map. You need to place towers throughout the map in order to kill the pathogens before they reach the end of the path. 
+-There are several types of towers, each representing a different kind of contributor to the immune system. Each tower has a cost in DP (DNA Points), and can be sold for half the cost that you bought them for.
+-Pathogens within the range of the tower will be impacted by the tower, depending on the tower’s function. 
+	-Macrophages and neutrophils kill pathogens within range.
+	-Mucus slows down all pathogens on the map. Higher level mucus slows down pathogens more.
+	-Dendritic cells pick up pathogens that die in its range. The player has the option of presenting the pathogen to either a B cell or a helper T cell in 	   order to activate them. 
+	-B cells, when activated, kills only the pathogen it was activated with. Does high damage.
+	-Helper T cell, when activated, can further activate cytotoxic T cells and B cells with the pathogen it was activated with.
+	-Cytotoxic T cells, when activated, kills only the pathogen it was activated with. Does extreme damage, but has lower range.
+-If a pathogen makes it to the end of the path, you will lose health equal to the remaining health of the pathogen. For example, if your current 	       health is at 50 and a pathogen with a health of 12 finishes the path in the map, your new health becomes 38. 
+-When you run out of health, you lose.
+
+If you can survive all the waves, you win the game!
+"
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -200.0
+offset_right = 550.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
+process_mode = 3
+self_modulate = Color(0.564706, 0.980392, 0.564706, 1)
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_ahmg4")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Back
+"
+horizontal_alignment = 1
+vertical_alignment = 1

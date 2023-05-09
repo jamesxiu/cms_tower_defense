@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://plwtr6j51ps"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/helper_t.gd" id="1_eqk1m"]
-[ext_resource type="Texture2D" uid="uid://b5radyeyacldl" path="res://Assets/Towers/helper_t.png" id="2_dax70"]
+[ext_resource type="Texture2D" uid="uid://nsclnxqd4ofn" path="res://Assets/Towers/helper_t.png" id="2_dax70"]
 [ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_wp3nh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
@@ -11,6 +11,7 @@ radius = 1.0
 script = ExtResource("1_eqk1m")
 
 [node name="Tower" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_dax70")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gh3ianhvxvoo"
-path="res://.godot/imported/tank_blue.png-6495090d28ee487abd478af3ec6e5f37.ctex"
+uid="uid://bc8ad7x3njd0"
+path="res://.godot/imported/mucus.png-60580084809c73e33a5f3154718315cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Towers/tank_blue.png"
-dest_files=["res://.godot/imported/tank_blue.png-6495090d28ee487abd478af3ec6e5f37.ctex"]
+source_file="res://Assets/Towers/mucus.png"
+dest_files=["res://.godot/imported/mucus.png-60580084809c73e33a5f3154718315cf.ctex"]
 
 [params]
 

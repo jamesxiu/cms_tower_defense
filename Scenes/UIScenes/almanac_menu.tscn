@@ -44,14 +44,14 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="Margin/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 20
 text = "Mucus: Slimy goo that slows down pathogens by trapping them. 
-Macrophage: iA white blood cell that engulfs pathogens. They digest pathogens they engulf and present the antigen fragment on their MHC II complex for helper T cells to bind. B 
-Neutrophil kills pathogens using toxins and ingest them. 
-Dendritic cells ingest pathogens (as well as dead ones) and present them on MHC to activate other immune cells. 
-B cells recognize antigens, secrete antibodies, and proliferate. There are two types of B cells: plasma cells and memory cells. Plasma cells secrete antibodies in order to mark pathogens for destruction. Memory cells are able to recognize foreign antigens faster in future infections. 
-Cytotoxic T cells produce cytotoxins, which trigger infected cells to undergo apoptosis. They can bind to antigen presented on MHC I, where it can be triggered by cytokines produced by a helper T cell that is bound to antigen on MHC II. Then, these active cytotoxic T cells proliferate, killing infected cells. 
-Helper T cells recognize antigens presented on MHC and secrete cytokines, which activate immune cells such as B cells, cytotoxic T cells, and macrophages. "
+Macrophage: A white blood cell that engulfs, then digests pathogens it encounters. Part of the innate immune response.
+Neutrophil: A cell that kills pathogens using toxins. Part of the innate immune response. 
+Dendritic cells: A cell that ingests pathogens and presents their antigens on their MHC complex (a a protrusion on its surface) to activate other adaptive immune cells. Part of the adaptive resposne. 
+B cell: A cell that recognizes antigens, secretes antibodies, and proliferates. There are two types of B cells: plasma cells and memory cells. Plasma cells secrete antibodies in order to mark pathogens for destruction. Memory cells are able to recognize foreign antigens faster in future infections. Part of the adaptive immune response.
+Cytotoxic T cell: A cell that produces cytotoxins, which trigger infected cells to undergo apoptosis. They can bind to antigens presented on MHC I complexes, and are then triggered by cytokines produced by a helper T cell that is bound to the antigen on MHC II. Then, these active cytotoxic T cells proliferate, killing infected cells with high effectiveness. Part of the adaptive immune response. 
+Helper T cell: A cell that recognizes antigens presented on MHC and secrete cytokines, which activate immune cells such as B cells and cytotoxic T cells. Part of the adaptive immune response."
 autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Margin"]

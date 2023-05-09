@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu8ty6ordh2oi"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/dendritic.gd" id="1_jnk6r"]
-[ext_resource type="Texture2D" uid="uid://b8icc5xs27ihp" path="res://Assets/Towers/dendritic.png" id="2_7ix1r"]
+[ext_resource type="Texture2D" uid="uid://eoslfkvsar4j" path="res://Assets/Towers/dendritic.png" id="2_7ix1r"]
 [ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_2r42p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
@@ -11,6 +11,7 @@ radius = 1.0
 script = ExtResource("1_jnk6r")
 
 [node name="Tower" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_7ix1r")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]

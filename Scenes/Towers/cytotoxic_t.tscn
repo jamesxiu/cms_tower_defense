@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3bvagabeltu6"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/cytotoxic_t.gd" id="1_5gdvh"]
-[ext_resource type="Texture2D" uid="uid://crd34blwh8t7k" path="res://Assets/Towers/cytotoxic_t.png" id="2_dl5iq"]
+[ext_resource type="Texture2D" uid="uid://c6m8o870yamfm" path="res://Assets/Towers/cytotoxic_t.png" id="2_dl5iq"]
 [ext_resource type="Texture2D" uid="uid://b71ugeyfchuag" path="res://Assets/UI/blue_button05.png" id="3_2r42p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s06k4"]
@@ -11,6 +11,7 @@ radius = 1.0
 script = ExtResource("1_5gdvh")
 
 [node name="Tower" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_dl5iq")
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]

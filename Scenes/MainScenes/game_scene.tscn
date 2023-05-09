@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://Scenes/MainScenes/game_scene.gd" id="1_nji3o"]
 [ext_resource type="Script" path="res://Scenes/MainScenes/UI.gd" id="3_grvtu"]
 [ext_resource type="Texture2D" uid="uid://isf145e5vlfv" path="res://Assets/UI/blue_button12.png" id="3_y3lw5"]
-[ext_resource type="Texture2D" uid="uid://bkxwgafvem1o7" path="res://Assets/Towers/neutrophil.png" id="4_5vkd8"]
-[ext_resource type="Texture2D" uid="uid://gh3ianhvxvoo" path="res://Assets/Towers/tank_blue.png" id="4_uc6at"]
-[ext_resource type="Texture2D" uid="uid://w6ve1rtwwbf1" path="res://Assets/Towers/macrophage.png" id="5_34krg"]
+[ext_resource type="Texture2D" uid="uid://spmfpt1c2ytg" path="res://Assets/Towers/neutrophil.png" id="4_5vkd8"]
+[ext_resource type="Texture2D" uid="uid://bc8ad7x3njd0" path="res://Assets/Towers/mucus.png" id="4_ydp40"]
+[ext_resource type="Texture2D" uid="uid://8dxmqpicv5ml" path="res://Assets/Towers/macrophage.png" id="5_34krg"]
 [ext_resource type="Texture2D" uid="uid://clxr56ssgtwu0" path="res://Assets/Icons/forward.png" id="6_73o4r"]
-[ext_resource type="Texture2D" uid="uid://b8icc5xs27ihp" path="res://Assets/Towers/dendritic.png" id="6_riowl"]
-[ext_resource type="Texture2D" uid="uid://bwyobqxvm1trj" path="res://Assets/Towers/b_cell.png" id="7_aowb8"]
+[ext_resource type="Texture2D" uid="uid://eoslfkvsar4j" path="res://Assets/Towers/dendritic.png" id="6_riowl"]
+[ext_resource type="Texture2D" uid="uid://c8de28pw4jd36" path="res://Assets/Towers/b_cell.png" id="7_aowb8"]
 [ext_resource type="Texture2D" uid="uid://wtyxuxdbv0d5" path="res://Assets/Icons/pause.png" id="7_eav4v"]
-[ext_resource type="Texture2D" uid="uid://b5radyeyacldl" path="res://Assets/Towers/helper_t.png" id="8_pgx7f"]
-[ext_resource type="Texture2D" uid="uid://crd34blwh8t7k" path="res://Assets/Towers/cytotoxic_t.png" id="9_py226"]
+[ext_resource type="Texture2D" uid="uid://nsclnxqd4ofn" path="res://Assets/Towers/helper_t.png" id="8_pgx7f"]
+[ext_resource type="Texture2D" uid="uid://c6m8o870yamfm" path="res://Assets/Towers/cytotoxic_t.png" id="9_py226"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_nji3o")
@@ -59,7 +59,7 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_uc6at")
+texture = ExtResource("4_ydp40")
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/mucus"]
 layout_mode = 1
@@ -88,13 +88,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_5vkd8")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/neutrophil"]
 layout_mode = 1
@@ -120,13 +121,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_34krg")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/macrophage"]
 layout_mode = 1
@@ -152,13 +154,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_riowl")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/dendritic"]
 layout_mode = 1
@@ -184,13 +187,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_aowb8")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/b_cell"]
 layout_mode = 1
@@ -216,13 +220,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_pgx7f")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/helper_t"]
 layout_mode = 1
@@ -248,13 +253,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_py226")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="UI/HUD/BuildBox/cytotoxic_t"]
 layout_mode = 1
