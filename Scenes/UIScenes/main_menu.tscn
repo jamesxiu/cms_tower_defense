@@ -103,24 +103,3 @@ text = "Quit
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="QuitGame2" type="TextureButton" parent="Margin/HBoxContainer"]
-self_modulate = Color(0, 1, 0, 0.117647)
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("1_hqspv")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Margin/HBoxContainer/QuitGame2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Quit
-"
-horizontal_alignment = 1
-vertical_alignment = 1
