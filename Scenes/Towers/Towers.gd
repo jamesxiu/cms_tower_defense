@@ -9,6 +9,7 @@ var ready_to_fire = true
 var info_mode = false
 var sell_button
 var game_scene
+var projectile = preload("res://Scenes/Towers/projectile.gd")
 
 func _ready():
 	sell_button = get_node("CanvasLayer/SellButton")
@@ -35,7 +36,7 @@ func _physics_process(delta):
 				info_mode=false
 				get_node("RangeTexture").queue_free()
 				sell_button.hide()
-		
+	
 	if enemy_array.size() > 0 and built:
 		select_target()
 		if ready_to_fire:
@@ -53,6 +54,12 @@ func select_target():
 func fire():
 	print("firing", target)
 	ready_to_fire = false
+	#projectile(target)
+	#create new projectile
+	var projectile_instance = projectile.new()
+	projectile_instance.target = target
+	add_child(projectile_instance)
+
 	target.on_hit(GameData.tower_data[type]['damage'])
 	await get_tree().create_timer(GameData.tower_data[type]['rate']).timeout
 	print("reloaded")
@@ -87,7 +94,9 @@ func sell_tower():
 	queue_free()
 		
 
-
-
-
-
+#func projectile(target):
+#	var sprite = Sprite2D.new()
+#	sprite.texture = load("res://Assets/projectile.png")
+#	add_child(sprite)
+#	sprite.position = self.position
+#	direction = target.position - sprite.position
