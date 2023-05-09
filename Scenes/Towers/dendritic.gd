@@ -37,8 +37,9 @@ func select_target():
 			target.connect("enemy_death", on_enemy_death)
 	
 func on_enemy_death():
-	specialty = target.type
-	add_specialty(specialty)
+	if is_instance_valid(game_scene):
+		specialty = target.type
+		add_specialty(specialty)
 	#Set Icon to virus
 	
 func on_infobutton_pressed():

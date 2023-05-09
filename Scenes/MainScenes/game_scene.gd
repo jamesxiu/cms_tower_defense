@@ -169,7 +169,6 @@ func upgrade_mucus():
 		else:
 			get_node("UI/HUD/BuildBox/mucus/Label").text = 'max'
 		emit_signal("mucus_upgraded", mucus_level)
-		get_node("UI/HUD/BuildBox/mucus/Label").text = str(mucus_cost)
 		
 #HEALTH AND MONEY FUNCS
 func on_base_damage(damage):
