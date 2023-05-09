@@ -58,7 +58,9 @@ var level_data = {
 		'wave_data': [
 			#name, timeout, health
 			[['enemy_1', 0.7, 3], ['enemy_2', 0.1, 3]],
-			[['enemy_1', 0.7, 5], ['enemy_2', 0.1, 5], ['enemy_1', 0.1, 5]]
+			[['enemy_1', 0.7, 5], ['enemy_2', 0.1, 5], ['enemy_1', 0.1, 5]],
+			[['enemy_1', 0.7, 10], ['enemy_2', 0.1, 10], ['enemy_1', 0.1, 10]],
+			[['enemy_1', 0.7, 20], ['enemy_2', 0.1, 20], ['enemy_1', 0.1, 20]],
 		]
 	},
 	2: {
