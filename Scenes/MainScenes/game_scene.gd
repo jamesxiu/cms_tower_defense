@@ -18,6 +18,7 @@ var health_label
 var money = 100
 var money_label
 var mucus_level_label
+var help_button
 var quit_button
 var pause_play_button
 
@@ -50,9 +51,10 @@ func _ready():
 	money_label.text = str(money)
 	mucus_level_label = get_node("UI/HUD/InfoBar/H/Mucus")
 	mucus_level_label.text = str(mucus_level)
+	help_button = get_node("UI/HUD/InfoBar/H/Help")
+	help_button.connect("pressed", on_help_press)
 	quit_button = get_node("UI/HUD/InfoBar/H/QuitButton")
 	quit_button.connect("pressed", on_quit_game)
-	
 	pause_play_button = get_node("UI/HUD/GameControls/PausePlay")
 	# start_next_wave()
 
@@ -182,6 +184,10 @@ func on_enemy_death():
 	enemies_in_wave -= 1
 
 #UI FUNCS
+func on_help_press():
+	#open help menu
+	pass
+
 func on_quit_game():
 	queue_free()
 	
