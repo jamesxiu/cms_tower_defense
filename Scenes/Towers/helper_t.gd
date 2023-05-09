@@ -36,6 +36,7 @@ func _physics_process(delta):
 			for t in specializable_towers:
 				if t.spec_button.button_pressed:
 					cont_process = false
+			if !sell_button.button_pressed and cont_process:
 				cancel_info_mode()
 		
 #Change specialty to last target that died in range
@@ -62,15 +63,17 @@ func on_infobutton_pressed():
 			for t in game_scene.map_node.get_node("Towers").get_children():
 				if t.type in ['b_cell', 'cytotoxic_t']:
 					print("Added specialize to", t)
-					specializable_towers.append(t)
-					t.spec_button.show()
-					t.spec_button.connect('pressed', specialize.bind(t))
+					if t.specialty == '':
+						specializable_towers.append(t)
+						t.spec_button.show()
+						t.spec_button.connect('pressed', specialize.bind(t))
 					
 func specialize(t):
 	print("HERE!!", t.specialty)
 	if t.specialty == '':
 		t.specialty = specialty
 		t.t_boost = 1.5
+		t.add_specialty(specialty)
 		print(t.specialty)
 	cancel_info_mode()
 		

@@ -17,6 +17,7 @@ var base_health
 var health_label
 var money = 100
 var money_label
+var mucus_level_label
 var quit_button
 var pause_play_button
 
@@ -37,12 +38,18 @@ func _ready():
 	num_waves = waves_data.size()
 	add_child(map_node)
 	for b in get_tree().get_nodes_in_group("build_buttons"):
+		var tower_name = b.get_name()
+		if tower_name == 'mucus':
+			b.get_node("Label").text = str(mucus_cost)
+		else:
+			b.get_node("Label").text = str(GameData['tower_data'][b.get_name()]['cost'])
 		b.connect("pressed", self.initiate_build_node.bind(b.get_name()))
 	health_label = get_node("UI/HUD/InfoBar/H/Health")
 	health_label.text = str(base_health)
 	money_label = get_node("UI/HUD/InfoBar/H/DP")
 	money_label.text = str(money)
-	
+	mucus_level_label = get_node("UI/HUD/InfoBar/H/Mucus")
+	mucus_level_label.text = str(mucus_level)
 	quit_button = get_node("UI/HUD/InfoBar/H/QuitButton")
 	quit_button.connect("pressed", on_quit_game)
 	
@@ -154,9 +161,10 @@ func upgrade_mucus():
 		money_label.text = str(money)
 		mucus_level += 1
 		mucus_cost = GameData['tower_data']['mucus']['cost'][mucus_level]
+		mucus_level_label.text = str(mucus_level)
 		emit_signal("mucus_upgraded", mucus_level)
+		get_node("UI/HUD/BuildBox/mucus/Label").text = str(mucus_cost)
 		
-
 #HEALTH AND MONEY FUNCS
 func on_base_damage(damage):
 	base_health -= damage

@@ -85,6 +85,18 @@ func sell_tower():
 	var money_label = game_scene.get_node("UI/HUD/InfoBar/H/DP")
 	money_label.text = str(game_scene.money)
 	queue_free()
+	
+func add_specialty(specialty_type):
+	var specialty_sprite = Sprite2D.new()
+	specialty_sprite.texture = load("res://Assets/Enemies/" + specialty_type + ".png")
+	specialty_sprite.position = Vector2(20, 25)
+	specialty_sprite.scale = Vector2(.6, .6)
+	specialty_sprite.set_name("SpecialtySprite")
+	add_child(specialty_sprite)
+	
+func clear_specialty_sprite():
+	get_node("SpecialtySprite").queue_free()
+	
 		
 
 

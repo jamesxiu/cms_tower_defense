@@ -38,6 +38,7 @@ func select_target():
 	
 func on_enemy_death():
 	specialty = target.type
+	add_specialty(specialty)
 	#Set Icon to virus
 	
 func on_infobutton_pressed():
@@ -59,15 +60,19 @@ func on_infobutton_pressed():
 			for t in game_scene.map_node.get_node("Towers").get_children():
 				if t.type in ['b_cell', 'helper_t']:
 					print("Added specialize to", t)
-					specializable_towers.append(t)
-					t.spec_button.show()
-					t.spec_button.connect('pressed', specialize.bind(t))
+					if t.specialty == '':
+						specializable_towers.append(t)
+						t.spec_button.show()
+						t.spec_button.connect('pressed', specialize.bind(t))
 					
 func specialize(t):
 	print("HERE!!", t.specialty)
-	if t.specialty == '':
+	if t.specialty == "":
 		t.specialty = specialty
 		print(t.specialty)
+		t.add_specialty(specialty)
+		specialty = ""
+		clear_specialty_sprite()
 	cancel_info_mode()
 		
 func cancel_info_mode():
@@ -79,6 +84,7 @@ func cancel_info_mode():
 			t.spec_button.disconnect('pressed', specialize.bind(t))
 		t.spec_button.hide()
 	specializable_towers = []
+	
 
 	
 	

@@ -61,6 +61,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_uc6at")
 
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/mucus"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
+
 [node name="Control" type="Control" parent="UI/HUD/BuildBox"]
 layout_mode = 2
 
@@ -84,6 +96,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_5vkd8")
 
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/neutrophil"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
+
 [node name="macrophage" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -103,6 +127,18 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_34krg")
+
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/macrophage"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 51.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
 
 [node name="dendritic" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
@@ -124,6 +160,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_riowl")
 
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/dendritic"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 51.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
+
 [node name="b_cell" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -143,6 +191,18 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_aowb8")
+
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/b_cell"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 51.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
 
 [node name="helper_t" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
@@ -164,6 +224,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_pgx7f")
 
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/helper_t"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 51.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
+
 [node name="cytotoxic_t" type="TextureButton" parent="UI/HUD/BuildBox" groups=["build_buttons"]]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -183,6 +255,18 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_py226")
+
+[node name="Label" type="Label" parent="UI/HUD/BuildBox/cytotoxic_t"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 51.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
 
 [node name="GameControls" type="HBoxContainer" parent="UI/HUD"]
 layout_mode = 1
@@ -239,7 +323,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Padding" type="Control" parent="UI/HUD/InfoBar/H"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 
 [node name="HealthSymbol" type="Label" parent="UI/HUD/InfoBar/H"]
@@ -259,7 +343,36 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Padding2" type="Control" parent="UI/HUD/InfoBar/H"]
-custom_minimum_size = Vector2(405, 0)
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="MucusSymbol" type="Label" parent="UI/HUD/InfoBar/H"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Mucus Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mucus" type="Label" parent="UI/HUD/InfoBar/H"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Padding3" type="Control" parent="UI/HUD/InfoBar/H"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Help" type="Button" parent="UI/HUD/InfoBar/H"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Help"
+
+[node name="Padding4" type="Control" parent="UI/HUD/InfoBar/H"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 
 [node name="QuitButton" type="Button" parent="UI/HUD/InfoBar/H"]
